@@ -2683,10 +2683,10 @@ static int smbchg_system_temp_level_set(struct smbchg_chip *chip,
                 rc);
     } else {
         int mach = xiaomi_msm8953_mach_get();
-        int is_tiffany_or_vince = (mach == XIAOMI_MSM8953_MACH_TIFFANY || 
+        int is_tissot_or_vince = (mach == XIAOMI_MSM8953_MACH_TISSOT || 
                                    mach == XIAOMI_MSM8953_MACH_VINCE);
 
-        if (is_tiffany_or_vince && 
+        if (is_tissot_or_vince && 
             (chip->usb_supply_type == POWER_SUPPLY_TYPE_USB_HVDCP || 
              chip->usb_supply_type == POWER_SUPPLY_TYPE_USB_HVDCP_3)) {
             
@@ -7931,7 +7931,7 @@ static int smbchg_probe(struct platform_device *pdev)
 	struct power_supply_config dc_psy_cfg = {};
 
 	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_VINCE ||
-	    xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TIFFANY) {
+	    xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TISSOT) {
 		smbchg_default_hvdcp_icl_ma = 2500;
 	} else {
 		smbchg_default_hvdcp_icl_ma = 1800;

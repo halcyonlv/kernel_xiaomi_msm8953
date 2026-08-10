@@ -10,7 +10,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3";
 	compatible = "qcom,msm8953-qrd-sku3",
-		   "qcom,msm8953-qrd", "qcom,msm8953", "qcom,qrd", "xiaomi,tiffany";
+		   "qcom,msm8953-qrd", "qcom,msm8953", "qcom,qrd", "xiaomi,tissot";
 	qcom,board-id= <0x1000b 0>;
 };
 
@@ -40,4 +40,4 @@
 	};
 };
 #include "mi8953/common/common.dtsi"
-#include "mi8953/tiffany/tiffany.dtsi"
+#include "mi8953/tissot/tissot.dtsi"

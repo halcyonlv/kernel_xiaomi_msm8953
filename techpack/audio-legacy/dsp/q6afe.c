@@ -840,8 +840,8 @@ static int32_t sp_make_afe_callback(uint32_t opcode, uint32_t *payload,
 		atomic_set(&this_afe.state, -1);
 	}
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_TIFFANY)
-	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TIFFANY) {
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_TISSOT)
+	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TISSOT) {
         if (param_hdr.param_id == AFE_PARAM_ID_DSM_CFG  ||
             param_hdr.param_id == AFE_PARAM_ID_DSM_INFO ||
             param_hdr.param_id == AFE_PARAM_ID_CALIB) {
@@ -2354,7 +2354,7 @@ static int afe_send_cps_config(int src_port)
 	return ret;
 }
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_TIFFANY)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_TISSOT)
 int afe_dsm_setget_params(uint8_t *payload, int size, int dir, uint32_t dst_port, uint32_t mod_id, uint32_t param_id)
 {
 	struct afe_dsm_set_command *set = NULL;

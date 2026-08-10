@@ -19,7 +19,7 @@ static int __init camera_legacy_init(void)
 	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_VINCE ||
 		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_DAISY ||
 		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_SAKURA ||
-		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TIFFANY ||
+		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TISSOT ||
 		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_ROSY ||
 		xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_YSL)
 		camera_legacy_enable = true;
