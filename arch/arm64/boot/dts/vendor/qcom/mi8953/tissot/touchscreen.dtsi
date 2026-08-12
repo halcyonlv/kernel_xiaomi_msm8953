@@ -16,6 +16,7 @@
 &soc {
 	i2c@78b7000 { /* BLSP1 QUP3 */
         synaptics_dsx@20 {
+			status = "disabled";
 			compatible = "synaptics,dsx-i2c";
 			reg = <0x20>;
 			interrupt-parent = <&tlmm>;

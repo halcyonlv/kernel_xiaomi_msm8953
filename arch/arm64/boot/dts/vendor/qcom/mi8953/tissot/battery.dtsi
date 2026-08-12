@@ -41,7 +41,7 @@
 	qcom,irq-volt-empty-mv = <3100>;
 	qcom,fg-use-vbat-low-empty-soc;
 	qcom,hold-soc-while-full;
-	qcom,fg-cc-cv-threshold-mv =<4370>;
+	qcom,fg-cc-cv-threshold-mv = <4370>;
 	qcom,vbat-estimate-diff-mv = <250>;
     qcom,battery-data = <&qrd_batterydata>;
     qcom,thermal-coefficients = [c8 86 c1 50 d3 37];
