@@ -20,13 +20,13 @@
 #if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 #include <xiaomi-msm8953/mach.h>
 #endif
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_ROSY)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 #include "msm_eeprom_otp_interface.h"
 #endif
 
 #undef CDBG
 #define CDBG(fmt, args...) pr_debug(fmt, ##args)
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_ROSY)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 char fusionid_back_d1[64] = { 0 };
 char fusionid_front_d1[64] = { 0 };
 extern char fusionid_front[];
@@ -1600,7 +1600,7 @@ static long msm_eeprom_subdev_fops_ioctl32(struct file *file, unsigned int cmd,
 
 #endif
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_ROSY)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 static uint16_t fusion_read_id_D1_back(uint8_t *data){
 	uint16_t i;
 	uint8_t *fusion_id = data;

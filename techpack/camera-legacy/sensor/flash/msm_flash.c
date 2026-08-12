@@ -30,7 +30,7 @@ DEFINE_MSM_MUTEX(msm_flash_mutex);
 static struct v4l2_file_operations msm_flash_v4l2_subdev_fops;
 static struct led_trigger *torch_trigger;
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_VINCE)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 static struct msm_flash_ctrl_t *flashlight_ctrl;
 static unsigned char flashlight_brightness_value;
 #endif
@@ -111,7 +111,7 @@ static struct led_classdev msm_torch_led[MAX_LED_TRIGGERS] = {
 	},
 };
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_VINCE)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 static void msm_flashlight_brightness_vince_set(struct led_classdev *led_cdev,
 		enum led_brightness value)
 {
@@ -178,7 +178,7 @@ int32_t msm_flashlight_create_classdev(struct platform_device *pdev,
 }
 #endif
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_YSL)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 static int msm_torch_led_num;
 #endif
 

@@ -4456,7 +4456,7 @@ static int smbchg_restricted_charging(struct smbchg_chip *chip, bool enable)
 	return rc;
 }
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_MIDO)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 extern void ist30xx_set_ta_mode(bool mode);
 int set_usb_charge_mode_par = 0;
 #endif
@@ -4467,7 +4467,7 @@ static void handle_usb_removal(struct smbchg_chip *chip)
 	union power_supply_propval pval = {0, };
 	int rc;
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_MIDO)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_MIDO) {
 		if (set_usb_charge_mode_par == 1)
 			ist30xx_set_ta_mode(0);

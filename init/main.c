@@ -558,7 +558,7 @@ static void __init mm_init(void)
 	pti_init();
 }
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_YSL)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 int fpsensor=1;
 #endif
 asmlinkage __visible void __init start_kernel(void)
@@ -595,7 +595,7 @@ asmlinkage __visible void __init start_kernel(void)
 	page_alloc_init();
 
 	pr_notice("Kernel command line: %s\n", boot_command_line);
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_YSL)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 	if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_YSL) {
 		p = strstr(boot_command_line, "androidboot.fpsensor=fpc");
 		if (p)
