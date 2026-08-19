@@ -1,6 +1,6 @@
 &soc {
 	goodix_fp {
-		compatible = "goodix,fingerprint-vince";
+		compatible = "goodix,fingerprint";
 		spi-max-frequency = <1000000>;
 		input-device-name = "gf3208";
 		interrupt-parent = <&tlmm>;
