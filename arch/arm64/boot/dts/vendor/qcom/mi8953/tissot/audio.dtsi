@@ -1,4 +1,20 @@
 &soc {
+	int_codec: sound {
+		status = "ok";
+		qcom,msm-hs-micbias-type = "internal";
+		qcom,audio-routing =
+			"RX_BIAS", "MCLK",
+			"SPK_RX_BIAS", "MCLK",
+			"INT_LDO_H", "MCLK",
+			"MIC BIAS External", "Handset Mic",
+			"MIC BIAS Internal2", "Headset Mic",
+			"MIC BIAS External", "Secondary Mic",
+			"AMIC1", "MIC BIAS External",
+			"AMIC2", "MIC BIAS Internal2",
+			"AMIC3", "MIC BIAS External";
+		/delete-property/ qcom,hdmi-dba-codec-rx;
+	};
+
 	i2c@78b6000 {
 		spkamp@3a {/* max98927 smartpa device*/
 			compatible = "maxim,max98927L";
@@ -27,6 +43,8 @@
 
 	qcom,msm-spk-ext-pa = <&tlmm 141 0>;
 	qcom,cdc-ext-pa-gpios = <&cdc_ext_pa_gpios>;
+	qcom,msm-mbhc-hphl-swh = <1>;
+	qcom,msm-mbhc-gnd-swh = <1>;
 
 	qcom,msm-gpios =
 		"pri_i2s",
@@ -119,5 +137,11 @@
 		&cdc_pdm_lines_2_act  &ext_pa_power_on
 		&pri_tlmm_lines_act &pri_tlmm_ws_act>;
 
+	/delete-property/ asoc-wsa-codec-names;
+	/delete-property/ asoc-wsa-codec-prefixes;
+
+	/delete-property/ msm-vdd-wsa-switch-supply;
 	/delete-property/ qcom,cdc-us-euro-gpios;
+	/delete-property/ qcom,msm-vdd-wsa-switch-voltage;
+	/delete-property/ qcom,msm-vdd-wsa-switch-current;
 };

@@ -82,13 +82,13 @@ static int msm8952_wsa_switch_event(struct snd_soc_dapm_widget *w,
 static int msm_dmic_event(struct snd_soc_dapm_widget *w,
 			  struct snd_kcontrol *kcontrol, int event);
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_ROSY)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 extern unsigned char AW87319_Audio_Speaker(void);
 extern unsigned char AW87319_Audio_OFF(void);
 #endif
 
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_TISSOT)
-int ext_pa_gpio = 0;
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
+int ext_pa_gpio = -EINVAL;
 int ext_pa_status = 0;
 #endif
 
@@ -416,7 +416,7 @@ int is_ext_spk_gpio_support(struct platform_device *pdev,
 				__func__, pdata->spk_ext_pa_gpio);
 			return -EINVAL;
 		}
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_TISSOT)
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_MSM8953)
 		if (xiaomi_msm8953_mach_get() == XIAOMI_MSM8953_MACH_TISSOT) {
 			ext_pa_gpio = pdata->spk_ext_pa_gpio;
 		}
@@ -4004,6 +4004,10 @@ static int __init msm8952_machine_init(void)
 			mbhc_cfg.key_code[3] = KEY_VOLUMEDOWN;
 			break;
 		case XIAOMI_MSM8953_MACH_TISSOT:
+			mbhc_cfg.detect_extn_cable = false;
+			mbhc_cfg.key_code[1] = KEY_VOLUMEUP;
+			mbhc_cfg.key_code[2] = KEY_VOLUMEDOWN;
+			mbhc_cfg.key_code[3] = 0;
 			break;
 		default:
 			break;
