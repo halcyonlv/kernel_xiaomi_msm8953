@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2019 The Linux Foundation. All rights reserved.
+ * Copyright (c) 2011-2020 The Linux Foundation. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for
  * any purpose with or without fee is hereby granted, provided that the
@@ -422,6 +422,8 @@ static void htt_mon_rx_get_phy_info(struct htt_host_rx_desc_base *rx_desc,
 	rx_status->ldpc = ldpc;
 	rx_status->beamformed = beamformed;
 	rx_status->vht_flag_values3[0] = mcs << 0x4 | (nss + 1);
+	if (ht_flags)
+		rx_status->ht_mcs = mcs;
 	rx_status->ht_flags = ht_flags;
 	rx_status->vht_flags = vht_flags;
 	rx_status->rtap_flags |= ((preamble == SHORT_PREAMBLE) ? BIT(1) : 0);
@@ -719,7 +721,8 @@ next_pop:
 #endif /* CONFIG_HL_SUPPORT */
 
 #if defined(FEATURE_MONITOR_MODE_SUPPORT)
-#if !defined(QCA6290_HEADERS_DEF) && !defined(QCA6390_HEADERS_DEF)
+#if !defined(QCA6290_HEADERS_DEF) && !defined(QCA6390_HEADERS_DEF) && \
+    !defined(QCA6490_HEADERS_DEF) && !defined(QCA6750_HEADERS_DEF)
 static void
 htt_rx_parse_ppdu_start_status(struct htt_host_rx_desc_base *rx_desc,
 			       struct ieee80211_rx_status *rs)

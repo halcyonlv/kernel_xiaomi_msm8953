@@ -28,23 +28,7 @@
 #if !defined( HDD_INCLUDES_H__ )
 #define HDD_INCLUDES_H__
 
-/**===========================================================================
-  
-  \file  wlan_hdd_includes.h
-  
-  \brief Internal includes for the Linux HDD 
-  
-  
-  ==========================================================================*/
-  
-/* $HEADER$ */
-  
-/*--------------------------------------------------------------------------- 
-  Include files
-  -------------------------------------------------------------------------*/ 
-
-// throw all the includes in here f to get the .c files  in the HDD to compile.
-
+/**
 #include <linux/version.h>
 #include <linux/module.h>
 #include <linux/kernel.h>

@@ -20,19 +20,14 @@
  */
 
 /*
- * This file was originally distributed by Qualcomm Atheros, Inc.
- * under proprietary terms before Copyright ownership was assigned
- * to the Linux Foundation.
- */
-
-/*
  *
  *
  * Author:      Kevin Nguyen    
  * Date:        04/09/02
  * History:-
- * 04/09/02        Created.
+ * Date            Modified by    Modification Information
  * --------------------------------------------------------------------
+ *
  */
 
 #ifndef __CFG_DEBUG_H__

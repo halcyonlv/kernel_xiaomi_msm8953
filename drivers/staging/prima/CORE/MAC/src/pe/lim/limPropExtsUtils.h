@@ -20,12 +20,6 @@
  */
 
 /*
- * This file was originally distributed by Qualcomm Atheros, Inc.
- * under proprietary terms before Copyright ownership was assigned
- * to the Linux Foundation.
- */
-
-/*
  *
  * This file limPropExtsUtils.h contains the definitions
  * used by all LIM modules to support proprietary features.

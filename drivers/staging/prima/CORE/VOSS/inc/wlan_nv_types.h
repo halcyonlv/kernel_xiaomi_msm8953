@@ -1,9 +1,6 @@
 /*
  * Copyright (c) 2012-2013 The Linux Foundation. All rights reserved.
  *
- * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
- *
- *
  * Permission to use, copy, modify, and/or distribute this software for
  * any purpose with or without fee is hereby granted, provided that the
  * above copyright notice and this permission notice appear in all
@@ -19,10 +16,13 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*
- * This file was originally distributed by Qualcomm Atheros, Inc.
- * under proprietary terms before Copyright ownership was assigned
- * to the Linux Foundation.
+#ifndef __WLAN_HDD_SUBNET_DETECT_H
+#define __WLAN_HDD_SUBNET_DETECT_H
+
+/**
+ * DOC: wlan_hdd_subnet_detect.h
+ *
+ * WLAN Host Device Driver subnet detect API specification
  */
 
 #if !defined __WLAN_NV_TYPES_H

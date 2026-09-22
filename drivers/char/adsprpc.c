@@ -780,6 +780,10 @@ static int fastrpc_mmap_find(struct fastrpc_file *fl, int fd,
 	if ((va + len) < va)
 		return -EOVERFLOW;
 
+	if ((mflags == ADSP_MMAP_HEAP_ADDR) ||
+		(mflags == ADSP_MMAP_REMOTE_HEAP_ADDR))
+		return -EFAULT;
+
 	hlist_for_each_entry_safe(map, n, &fl->maps, hn) {
 		if (va >= map->va &&
 			va + len <= map->va + map->len &&
@@ -900,9 +904,11 @@ static void fastrpc_mmap_free(struct fastrpc_mmap *map, uint32_t flags)
 			map->refs--;
 		if (!map->refs)
 			hlist_del_init(&map->hn);
-		spin_unlock(&me->hlock);
-		if (map->refs > 0)
+		if (map->refs > 0) {
+			spin_unlock(&me->hlock);
 			return;
+		}
+		spin_unlock(&me->hlock);
 	} else {
 		if (map->refs)
 			map->refs--;

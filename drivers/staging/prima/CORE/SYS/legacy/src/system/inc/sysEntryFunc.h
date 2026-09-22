@@ -20,12 +20,6 @@
  */
 
 /*
- * This file was originally distributed by Qualcomm Atheros, Inc.
- * under proprietary terms before Copyright ownership was assigned
- * to the Linux Foundation.
- */
-
-/*
  *
  * This file sysEntryFunc.h contains module entry functions definitions
  * Author:      V. K. Kandarpa
