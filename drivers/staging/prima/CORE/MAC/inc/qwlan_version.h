@@ -19,6 +19,12 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+/*
+ * This file was originally distributed by Qualcomm Atheros, Inc.
+ * under proprietary terms before Copyright ownership was assigned
+ * to the Linux Foundation.
+ */
+
 #ifndef QWLAN_VERSION_H
 #define QWLAN_VERSION_H
 /*===========================================================================
@@ -28,8 +34,18 @@ FILE:
 
 BRIEF DESCRIPTION:
    WLAN Host Version file.
-   Build number automatically updated by build scripts.
+   Build number automaticly updated by build scripts.
 
 
+===========================================================================*/
+
+#define QWLAN_VERSION_MAJOR            3
+#define QWLAN_VERSION_MINOR            0
+#define QWLAN_VERSION_PATCH            11
+#define QWLAN_VERSION_EXTRA            ""
+
+#define QWLAN_VERSION_BUILD            85
+
+#define QWLAN_VERSIONSTR               "3.0.11.85.9"
 
 #endif /* QWLAN_VERSION_H */

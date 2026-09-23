@@ -19,6 +19,12 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+/*
+ * This file was originally distributed by Qualcomm Atheros, Inc.
+ * under proprietary terms before Copyright ownership was assigned
+ * to the Linux Foundation.
+ */
+
 /******************************************************************************
  * wlan_ptt_sock_svc.c
  *
@@ -92,25 +98,6 @@ int ptt_sock_activate_svc(void *pAdapter);
 int ptt_sock_deactivate_svc(hdd_context_t *pHddCtx);
 int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid, int flag);
 
-/**
- * ptt_sock_deactivate_svc() - API to deregister PTT/PUMAC command handlers
- *
- * API to deregister the handler for PTT/PUMAC NL messages.
- *
- * Return: None
- */
-void ptt_sock_deactivate_svc(void);
-
-#else
-static inline void ptt_sock_activate_svc(void)
-{
-}
-static inline void ptt_sock_deactivate_svc(void)
-{
-}
-#endif
-
-int ptt_sock_send_msg_to_app(tAniHdr *wmsg, int radio, int src_mod, int pid);
 /*
  * Format of message exchanged between the PTT Socket App in userspace and the
  * WLAN Driver, in either direction. Each msg will begin with this header and
