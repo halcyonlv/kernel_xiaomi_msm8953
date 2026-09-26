@@ -127,7 +127,7 @@ config USB_DWC3_QCOM
 
 config USB_DWC3_MSM
 	tristate "QTI MSM Platforms"
-	depends on ARCH_QCOM || COMPILE_TEST
+	depends on (ARCH_QCOM || COMPILE_TEST) && !USB_DWC3_MSM_LEGACY
 	help
 	  Applicable to QTI MSM Platforms with DesignWare Core
 	  USB3 IP.
