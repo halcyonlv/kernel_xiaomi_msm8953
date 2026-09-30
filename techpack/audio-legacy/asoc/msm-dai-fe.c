@@ -753,6 +753,7 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 		.name = "HDMI_HOSTLESS",
 		.probe = fe_dai_probe,
 	},
+#ifndef CONFIG_AUXPCM_DISABLE
 	{
 		.playback = {
 			.stream_name = "AUXPCM_HOSTLESS Playback",
@@ -808,6 +809,7 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 		.name = "SEC_AUXPCM_TX_HOSTLESS",
 		.probe = fe_dai_probe,
 	},
+#endif
 	{
 		.playback = {
 			.stream_name = "VOICE_STUB Playback",

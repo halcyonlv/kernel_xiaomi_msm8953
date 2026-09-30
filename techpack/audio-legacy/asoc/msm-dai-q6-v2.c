@@ -1405,7 +1405,9 @@ static int msm_dai_q6_aux_pcm_probe(struct snd_soc_dai *dai)
 						dai->name, dai_data->tx_pid,
 						(void *)dai_data);
 
+#ifndef CONFIG_AUXPCM_DISABLE
 	rc = msm_dai_q6_dai_add_route(dai);
+#endif
 	return rc;
 }
 
